@@ -6,12 +6,20 @@ use Livewire\Component;
 
 class Game extends Component
 {
-    private const OPTIONS = ['Rock', 'Paper', 'Scissors'];
+    public const ROCK = 'Rock';
+    public const PAPER = 'Paper';
+    public const SCISSORS = 'Scissors';
+
     private const BEATS = [
-        'Rock' => 'Scissors',
-        'Paper' => 'Rock',
-        'Scissors' => 'Paper'
+        self::ROCK => self::SCISSORS,
+        self::PAPER => self::ROCK,
+        self::SCISSORS => self::PAPER
     ];
+
+    public const WIN = 'win';
+    public const LOSS = 'loss';
+    public const DRAW = 'draw';
+
     public ?string $userChoice;
     public ?string $opponentChoice;
     public ?string $userResult;
@@ -36,15 +44,16 @@ class Game extends Component
 
     private function getRandomChoice(): string
     {
-        return self::OPTIONS[random_int(0, 2)];
+        $indexRandom = random_int(0, 2);
+        return [self::ROCK, self::PAPER, self::SCISSORS][$indexRandom];
     }
 
     private function getUserResult()
     {
         if($this->userChoice === $this->opponentChoice)
         {
-            return 'draw';
+            return self::DRAW;
         }
-        return self::BEATS[$this->userChoice] === $this->opponentChoice ? 'win' : 'loss';
+        return self::BEATS[$this->userChoice] === $this->opponentChoice ? self::WIN : self::LOSS;
     }
 }
