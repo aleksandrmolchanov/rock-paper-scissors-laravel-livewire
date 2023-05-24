@@ -27,12 +27,13 @@ class Game extends Component
 
     public function mount()
     {
-        $this->opponentChoice = $this->getRandomChoice();
+
     }
 
     public function choose($choice)
     {
         $this->userChoice = $choice;
+        $this->opponentChoice = $this->getRandomChoice();
         $this->userResult = $this->getUserResult();
         $this->gameEnded = true;
     }
