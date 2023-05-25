@@ -7,7 +7,7 @@
     </div>
     <div class="mt-4 flex gap-x-4">
         <div>
-            <h2 class="text-lg font-semibold">{{ __('game.your_choise') }}</h2>
+            <h2 class="text-lg font-semibold">{{ __('game.your_choice') }}</h2>
             <div class="mt-8 flex flex-col gap-y-2">
                 <div>
                     @include('livewire.parts.user-button', ['buttonName' => 'Rock'])
@@ -21,7 +21,7 @@
             </div>
         </div>
         <div>
-            <h2 class="text-lg font-semibold">{{ __('game.opponents_choise') }}</h2>
+            <h2 class="text-lg font-semibold">{{ __('game.opponents_choice') }}</h2>
             <span class="text-xs">({{ __('game.is_hidden') }})</span>
             <div class="mt-2 flex flex-col gap-y-2">
                 <div>

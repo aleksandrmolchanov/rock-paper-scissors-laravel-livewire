@@ -3,8 +3,8 @@
 return [
 
     'welcome' => 'Welcome to the game',
-    'your_choise' => 'Your choise',
-    'opponents_choise' => 'Opponent\'s choise',
+    'your_choice' => 'Your choice',
+    'opponents_choice' => 'Opponent\'s choice',
     'is_hidden' => 'is hidden until you make your choice',
 
 ];
